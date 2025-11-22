@@ -1,0 +1,15 @@
+---
+type NavigationProps = {
+  items: { url: string; label: string }[];
+};
+
+const { items } = Astro.props as NavigationProps;
+---
+
+ <nav>
+    <div class="nav-link" id="main-menu">
+      <ul>
+        {items.map((item) => (<li><a href={item.url}>{item.label}</a></li>))}
+      </ul>
+    </div>
+  </nav>

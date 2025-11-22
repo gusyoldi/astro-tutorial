@@ -1,0 +1,14 @@
+---
+import BlogPost from '../components/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+
+const pageTitle = "Blog";
+const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true}))
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<p>Welcome to the blog page! Here you'll find the latest posts.</p>
+
+	{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import Navigation from "./Navigation.astro";
+
+const items = [
+  {url: '/', label: 'Home'}, 
+  {url: '/about', label: "About Us"},
+  {url: '/blog', label: "Blog"},
+  {url: '/tags', label: "Posts By Tags"},
+]
+---
+
+<header>
+  <Navigation items={items}/>
+</header> 
